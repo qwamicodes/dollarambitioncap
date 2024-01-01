@@ -10,19 +10,19 @@ type PackageProps = {
 const Package = ({ type }: PackageProps) => {
   if (type === "premium") {
     return (
-      <div className="flex gap-10">
-        <div className="overflow-hidden basis-1/2">
+      <div className="flex flex-col md:flex-row gap-10">
+        <div className="overflow-hidden">
           <img
             src={PremiumImage}
             alt="premium imagery"
             className="rounded-3xl object-cover w-[60rem] h-[40rem]"
           />
         </div>
-        <div className="flex flex-col justify-around">
+        <div className="flex flex-col items-center md:items-start justify-around gap-10 md:gap-0">
           <h1 className="font-bold text-3xl uppercase">
             premium mentorship package
           </h1>
-          <ul className="list-disc text-gray-600 pl-10">
+          <ul className="list-disc text-gray-600 pl-10 leading-tight">
             <li>Access to the PRIVATE discord community.</li>
             <li>Video lessons on Technical Analysis.</li>
             <li>Recorded Lessons on Global Macroeconomics.</li>
@@ -46,7 +46,7 @@ const Package = ({ type }: PackageProps) => {
   }
 
   return (
-    <div className="flex gap-10">
+    <div className="flex flex-col md:flex-row gap-10">
       <div className="overflow-hidden basis-1/2">
         <img
           src={FreeImage}
@@ -54,11 +54,11 @@ const Package = ({ type }: PackageProps) => {
           className="rounded-3xl object-cover w-[60rem] h-[40rem]"
         />
       </div>
-      <div className="flex flex-col justify-around flex-1">
+      <div className="flex flex-col items-center md:items-start justify-around flex-1 gap-10 md:gap-0">
         <h1 className="font-bold text-3xl uppercase">
           prop-firm passing service
         </h1>
-        <ul className="list-disc text-gray-600 pl-10">
+        <ul className="list-disc text-gray-600 pl-10 leading-tight">
           <li>Join our Waiting List for Manual Prop Firm Passing!</li>
         </ul>
         <div className="text-gray-600">

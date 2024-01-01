@@ -19,7 +19,7 @@ const Header = () => {
     "h-[50rem] bg-hero-pattern": pathname === "/",
     "h-[90rem] bg-hero-pattern-blog": pathname === "/blog",
     "h-[50rem] bg-hero-pattern-services bg-center": pathname === "/services",
-    "h-[90rem] bg-hero-pattern-about": pathname === "/about",
+    "md:h-[90rem] h-[30rem] bg-hero-pattern-about bg-center": pathname === "/about",
     "h-[90rem] bg-hero-pattern-contact": pathname === "/contact",
   });
 

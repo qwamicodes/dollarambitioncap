@@ -10,13 +10,13 @@ const Navbar = () => {
   const liClassname = "border-b border-gray-200 px-5 py-4";
 
   return (
-    <nav className="min-[320px]:w-full flex items-center justify-center w-full mx-auto h-[7rem] fixed z-20 bg-white/7 text-white backdrop-blur-sm shadow-sm shadow-black/8">
-      <div className="w-3/4 flex items-center justify-between">
+    <nav className="flex items-center justify-center w-full mx-auto h-[7rem] fixed z-20 bg-white/7 text-white backdrop-blur-sm shadow-sm shadow-black/10">
+      <div className="lg:w-3/4 xl:w-2/3 md:w-full w-4/5 md:mx-20 flex items-center justify-between">
         <Link to="/">
           <img src={Logo} alt="main logo" />
         </Link>
 
-        <ul className="hidden tablet:flex tablet:gap-5 uppercase font-medium justify-between items-center basis-1/2 text-2xl">
+        <ul className="hidden lg:flex lg:gap-5 uppercase font-medium justify-between items-center text-2xl lg:text-3xl">
           <li>
             <Link to="/">home</Link>
           </li>
@@ -36,7 +36,7 @@ const Navbar = () => {
             <Link to="/privacy-policy">privacy policy</Link>
           </li>
         </ul>
-        <div className="w-[4rem] rounded-md p-3 bg-[#0AA92F] md:hidden">
+        <div className="w-[4rem] rounded-md p-3 bg-[#0AA92F] lg:hidden">
           <span onClick={() => setShowNav(!showNav)}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -56,7 +56,10 @@ const Navbar = () => {
         </div>
       </div>
       {showNav && (
-        <ul className="absolute top-full w-[100vw] flex-col bg-white text-gray-500  gap-5 uppercase font-medium justify-between items-center basis-[40%] text-2xl">
+        <ul
+          onClick={() => setShowNav(false)}
+          className="absolute top-full w-[100vw] flex-col bg-white text-gray-500  gap-5 uppercase font-medium justify-between items-center basis-[40%] text-2xl"
+        >
           <li className={liClassname}>
             <Link to="/" className={pathname === "/" ? "text-red-400" : ""}>
               home

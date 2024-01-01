@@ -1,4 +1,5 @@
-import { Route, Routes } from "react-router-dom";
+import { useEffect } from "react";
+import { Route, Routes, useLocation } from "react-router-dom";
 
 import Navbar from "./layout/navbar";
 
@@ -11,6 +12,12 @@ import Contact from "./pages/contact";
 import PrivacyPolicy from "./pages/privacy-policy";
 
 const App = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   return (
     <main className="max-w-[1920px] mx-auto">
       {/*  Navigation bar */}
