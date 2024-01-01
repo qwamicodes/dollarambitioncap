@@ -8,31 +8,35 @@ const Navbar = () => {
   const { pathname } = useLocation();
 
   const liClassname = "border-b border-gray-200 px-5 py-4";
+
   return (
-    <nav className="max-w-[1440px] min-[320px]:w-full flex items-center justify-center w-full mx-auto h-[7rem] fixed z-20 bg-white/7 text-white backdrop-blur-sm shadow-sm shadow-black/8">
+    <nav className="min-[320px]:w-full flex items-center justify-center w-full mx-auto h-[7rem] fixed z-20 bg-white/7 text-white backdrop-blur-sm shadow-sm shadow-black/8">
       <div className="w-3/4 flex items-center justify-between">
         <Link to="/">
           <img src={Logo} alt="main logo" />
         </Link>
 
-        <ul className="hidden tablet:flex tablet:gap-5 uppercase font-medium justify-between items-center basis-[40%] text-2xl">
+        <ul className="hidden tablet:flex tablet:gap-5 uppercase font-medium justify-between items-center basis-1/2 text-2xl">
           <li>
             <Link to="/">home</Link>
           </li>
           <li>
-            <span>blog</span>
+            <Link to="/blog">blog</Link>
           </li>
           <li>
-            <span>services</span>
+            <Link to="/services">services</Link>
           </li>
           <li>
-            <span>about</span>
+            <Link to="/about">about</Link>
           </li>
           <li>
-            <span>contact</span>
+            <Link to="/contact">contact</Link>
+          </li>
+          <li>
+            <Link to="/privacy-policy">privacy policy</Link>
           </li>
         </ul>
-        <div className="w-[4rem] rounded-md p-3 bg-[#0AA92F]">
+        <div className="w-[4rem] rounded-md p-3 bg-[#0AA92F] md:hidden">
           <span onClick={() => setShowNav(!showNav)}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -59,16 +63,44 @@ const Navbar = () => {
             </Link>
           </li>
           <li className={liClassname}>
-            <span>blog</span>
+            <Link
+              to="/blog"
+              className={pathname === "/blog" ? "text-red-400" : ""}
+            >
+              blog
+            </Link>
           </li>
           <li className={liClassname}>
-            <span>services</span>
+            <Link
+              to="/services"
+              className={pathname === "/services" ? "text-red-400" : ""}
+            >
+              services
+            </Link>
           </li>
           <li className={liClassname}>
-            <span>about</span>
+            <Link
+              to="/about"
+              className={pathname === "/about" ? "text-red-400" : ""}
+            >
+              about
+            </Link>
           </li>
           <li className={liClassname}>
-            <span>contact</span>
+            <Link
+              to="/contact"
+              className={pathname === "/contact" ? "text-red-400" : ""}
+            >
+              contact
+            </Link>
+          </li>{" "}
+          <li className={liClassname}>
+            <Link
+              to="/privacy-policy"
+              className={pathname === "/privacy-policy" ? "text-red-400" : ""}
+            >
+              privacy policy
+            </Link>
           </li>
         </ul>
       )}

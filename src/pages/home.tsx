@@ -1,19 +1,15 @@
-import React from "react";
-
 import Header from "../layout/header";
 import Articles from "../layout/articles";
 import Learnmore from "../layout/learnmore";
 import Reachout from "../layout/reachout";
-import Footer from "../layout/footer";
 
 const Home = () => {
   return (
-    <section className="">
+    <section>
       <Header />
-      <Articles />
+      <Articles extended={false} />
       <Learnmore />
       <Reachout />
-      <Footer />
     </section>
   );
 };
